@@ -12,6 +12,17 @@ useSeoMeta({
   ogUrl: "https://morasolar.com/",
 });
 
+useHead({
+  link: [
+    {
+      rel: "preload",
+      as: "image",
+      href: "/images/napelem_fal.jpg",
+      fetchpriority: "high",
+    },
+  ],
+});
+
 const services = [
   {
     icon: "fa-solid fa-solar-panel",
@@ -51,10 +62,26 @@ const stats = [
   <article>
     <!-- HERO -->
     <section
-      class="min-h-screen flex items-center justify-center text-center bg-cover bg-center bg-fixed px-4 pt-24"
-      style="background-image: url(&quot;/images/napelem_fal.jpg&quot;)"
+      class="relative min-h-screen flex items-center justify-center text-center px-4 pt-24 overflow-hidden"
     >
-      <div class="max-w-3xl mx-auto">
+      <NuxtImg
+        src="/images/napelem_fal.jpg"
+        alt=""
+        aria-hidden="true"
+        width="1920"
+        height="1080"
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        preload
+        class="hidden"
+      />
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-fixed"
+        style="background-image: url('/images/napelem_fal.jpg')"
+      />
+      <div class="absolute inset-0 bg-black/35" />
+      <div class="relative z-10 max-w-3xl mx-auto">
         <h1
           class="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg leading-tight"
         >
@@ -119,12 +146,15 @@ const stats = [
         class="container mx-auto grid md:grid-cols-[0.7fr_1fr] gap-12 items-center"
       >
         <figure>
-          <img
+          <NuxtImg
             src="/images/daru.jpg"
+            alt="Munkagép"
             width="800"
             height="531"
+            sizes="(max-width: 767px) 100vw, 40vw"
             loading="lazy"
-            alt="Munkagép"
+            format="webp"
+            quality="80"
             class="w-full rounded-md"
           />
         </figure>

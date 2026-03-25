@@ -29,9 +29,13 @@ const services = [
   <header class="fixed top-0 left-0 w-full py-2.5 bg-white shadow-sm z-50 animate-slideIn">
     <div class="container mx-auto px-4 flex justify-between items-center gap-4">
       <NuxtLink to="/" class="shrink-0">
-        <img
+        <NuxtImg
           src="/images/morasollogo.png"
           width="200"
+          height="65"
+          loading="lazy"
+          format="webp"
+          quality="80"
           alt="Móra Solar 88 logo"
           class="block"
         />
@@ -100,7 +104,15 @@ const services = [
         >
           <div class="flex justify-between items-center">
             <NuxtLink to="/" @click="closeMenu">
-              <img src="/images/morasollogo.png" width="160" alt="Móra Solar 88 logo" />
+              <NuxtImg
+                src="/images/morasollogo.png"
+                width="160"
+                height="52"
+                loading="lazy"
+                format="webp"
+                quality="80"
+                alt="Móra Solar 88 logo"
+              />
             </NuxtLink>
             <button
               class="bg-white/10 text-white text-xl p-1.5 rounded-full hover:bg-white/20 transition"
