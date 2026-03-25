@@ -5,7 +5,7 @@
       <div>
         <NuxtLink to="/">
           <NuxtImg
-            src="/images/morasollogo.png"
+            src="/images/logo_dark.png"
             width="200"
             height="65"
             loading="lazy"

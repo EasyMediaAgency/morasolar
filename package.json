@@ -17,7 +17,8 @@
     "@nuxtjs/sitemap": "^7.2.8",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "nuxt": "^4.0.0",
-    "resend": "^6.9.4"
+    "resend": "^6.9.4",
+    "vue-pdf-embed": "^2.1.4"
   },
   "devDependencies": {
     "@netlify/nuxt": "^0.2.36",

@@ -1,36 +1,38 @@
 <script setup lang="ts">
-const mobileMenuOpen = ref(false)
-const dropdownOpen = ref(false)
+const mobileMenuOpen = ref(false);
+const dropdownOpen = ref(false);
 
 function toggleMenu() {
-  mobileMenuOpen.value = !mobileMenuOpen.value
+  mobileMenuOpen.value = !mobileMenuOpen.value;
   if (mobileMenuOpen.value) {
-    document.body.classList.add('nav-active')
+    document.body.classList.add("nav-active");
   } else {
-    document.body.classList.remove('nav-active')
+    document.body.classList.remove("nav-active");
   }
 }
 
 function closeMenu() {
-  mobileMenuOpen.value = false
-  document.body.classList.remove('nav-active')
+  mobileMenuOpen.value = false;
+  document.body.classList.remove("nav-active");
 }
 
 const services = [
-  { label: 'Napelem telepítés', to: '/napelem' },
-  { label: 'Napelem tisztítás', to: '/napelemtisztitas' },
-  { label: 'Villanyszerelés', to: '/villanyszereles' },
-  { label: 'Villamos felülvizsgálat', to: '/villamosfelulvizsgalat' },
-  { label: 'Földmunka', to: '/foldmunka' },
-]
+  { label: "Napelem telepítés", to: "/napelem" },
+  { label: "Napelem tisztítás", to: "/napelemtisztitas" },
+  { label: "Villanyszerelés", to: "/villanyszereles" },
+  { label: "Villamos felülvizsgálat", to: "/villamosfelulvizsgalat" },
+  { label: "Földmunka", to: "/foldmunka" },
+];
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 w-full py-2.5 bg-white shadow-sm z-50 animate-slideIn">
+  <header
+    class="fixed top-0 left-0 w-full py-2.5 bg-white shadow-sm z-50 animate-slideIn"
+  >
     <div class="container mx-auto px-4 flex justify-between items-center gap-4">
       <NuxtLink to="/" class="shrink-0">
         <NuxtImg
-          src="/images/morasollogo.png"
+          src="/images/logo_light.png"
           width="200"
           height="65"
           loading="lazy"
@@ -43,13 +45,23 @@ const services = [
 
       <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center gap-8 ml-auto mr-6">
-        <NuxtLink to="/" class="font-bold text-charcoal hover:text-orange transition">
+        <NuxtLink
+          to="/"
+          class="font-bold text-charcoal hover:text-orange transition"
+        >
           Kezdőlap
         </NuxtLink>
-        <NuxtLink to="/#rolunk" class="font-bold text-charcoal hover:text-orange transition">
+        <NuxtLink
+          to="/#rolunk"
+          class="font-bold text-charcoal hover:text-orange transition"
+        >
           Rólunk
         </NuxtLink>
-        <div class="relative" @mouseenter="dropdownOpen = true" @mouseleave="dropdownOpen = false">
+        <div
+          class="relative"
+          @mouseenter="dropdownOpen = true"
+          @mouseleave="dropdownOpen = false"
+        >
           <button class="font-bold text-charcoal hover:text-orange transition">
             Szolgáltatások
           </button>
@@ -67,23 +79,30 @@ const services = [
             </NuxtLink>
           </div>
         </div>
-        <NuxtLink to="/palyazat" class="font-bold text-charcoal hover:text-orange transition">
+        <NuxtLink
+          to="/palyazat"
+          class="font-bold text-charcoal hover:text-orange transition"
+        >
           Pályázat
         </NuxtLink>
-        <NuxtLink to="/#email" class="font-bold text-charcoal hover:text-orange transition">
+        <NuxtLink
+          to="/#email"
+          class="font-bold text-charcoal hover:text-orange transition"
+        >
           Kapcsolat
         </NuxtLink>
       </nav>
 
-      <a
-        href="tel:+36703731435"
-        class="hidden md:block btn-primary-orange"
-      >
+      <a href="tel:+36703731435" class="hidden md:block btn-primary-orange">
         +36703731435
       </a>
 
       <!-- Mobile hamburger -->
-      <button class="lg:hidden text-3xl text-charcoal" aria-label="open menu" @click="toggleMenu">
+      <button
+        class="lg:hidden text-3xl text-charcoal"
+        aria-label="open menu"
+        @click="toggleMenu"
+      >
         <i class="fa-solid fa-bars" />
       </button>
 
@@ -91,7 +110,7 @@ const services = [
       <Transition name="fade">
         <div
           v-if="mobileMenuOpen"
-          class="fixed inset-0 bg-raisin-black/80 z-40"
+          class="fixed inset-0 rounded bg-raisin-black/80 z-40"
           @click="closeMenu"
         />
       </Transition>
@@ -105,7 +124,7 @@ const services = [
           <div class="flex justify-between items-center">
             <NuxtLink to="/" @click="closeMenu">
               <NuxtImg
-                src="/images/morasollogo.png"
+                src="/images/logo_dark.png"
                 width="160"
                 height="52"
                 loading="lazy"
@@ -124,8 +143,12 @@ const services = [
           </div>
 
           <div class="flex flex-col gap-2 flex-1">
-            <NuxtLink to="/" class="font-bold py-1.5" @click="closeMenu">Kezdőlap</NuxtLink>
-            <NuxtLink to="/#rolunk" class="font-bold py-1.5" @click="closeMenu">Rólunk</NuxtLink>
+            <NuxtLink to="/" class="font-bold py-1.5" @click="closeMenu"
+              >Kezdőlap</NuxtLink
+            >
+            <NuxtLink to="/#rolunk" class="font-bold py-1.5" @click="closeMenu"
+              >Rólunk</NuxtLink
+            >
             <div>
               <p class="font-bold py-1.5">Szolgáltatások</p>
               <div class="pl-4 flex flex-col gap-1">
@@ -140,12 +163,19 @@ const services = [
                 </NuxtLink>
               </div>
             </div>
-            <NuxtLink to="/palyazat" class="font-bold py-1.5" @click="closeMenu">Pályázat</NuxtLink>
-            <NuxtLink to="/#email" class="font-bold py-1.5" @click="closeMenu">Kapcsolat</NuxtLink>
+            <NuxtLink to="/palyazat" class="font-bold py-1.5" @click="closeMenu"
+              >Pályázat</NuxtLink
+            >
+            <NuxtLink to="/#email" class="font-bold py-1.5" @click="closeMenu"
+              >Kapcsolat</NuxtLink
+            >
           </div>
 
           <div class="flex flex-col gap-2 text-sm">
-            <a href="mailto:villszer.nagy@gmail.com" class="hover:text-orange transition">
+            <a
+              href="mailto:villszer.nagy@gmail.com"
+              class="hover:text-orange transition"
+            >
               villszer.nagy@gmail.com
             </a>
             <a href="tel:+36703731435" class="hover:text-orange transition">
@@ -168,8 +198,12 @@ const services = [
 
 <style scoped>
 @keyframes slideIn {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 .animate-slideIn {
   animation: slideIn 0.5s ease forwards;
