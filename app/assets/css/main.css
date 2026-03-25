@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-manrope text-black-coral leading-relaxed;
+  }
+
+  body.nav-active {
+    @apply overflow-hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: hsl(0, 0%, 98%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(0, 0%, 80%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(0, 0%, 70%);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-7 py-3 rounded-full font-bold text-lg transition-transform duration-300 will-change-transform hover:-translate-y-1;
+  }
+
+  .btn-primary-white {
+    @apply btn-primary bg-white text-charcoal border-2 border-white hover:text-orange;
+  }
+
+  .btn-primary-orange {
+    @apply btn-primary bg-orange text-white border-2 border-orange hover:text-white;
+  }
+
+  .section-subtitle {
+    @apply text-sm uppercase text-orange font-bold mb-4 tracking-wide;
+  }
+
+  .contact-field {
+    @apply w-full h-12 border-2 border-transparent outline-none bg-gray-200/60 px-4 py-2 text-lg mb-5 transition-all duration-300 font-manrope hover:bg-black/10 focus:border-blue-400/50 focus:bg-white;
+  }
+}
