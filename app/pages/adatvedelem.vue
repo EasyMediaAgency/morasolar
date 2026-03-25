@@ -16,7 +16,7 @@ useSeoMeta({
         </h2>
       </div>
       <div
-        class="max-w-3xl mx-auto text-left text-black-coral leading-relaxed space-y-6 text-justify"
+        class="max-w-3xl mx-auto text-black-coral leading-relaxed space-y-6 text-justify"
       >
         <div>
           <h4 class="font-bold text-charcoal mb-2">
