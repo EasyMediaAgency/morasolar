@@ -40,5 +40,4 @@ Set these runtime config values for the contact form email endpoint:
 ```env
 NUXT_RESEND_API_KEY=
 NUXT_EMAIL_FROM=
-NUXT_EMAIL_TO=
 ```

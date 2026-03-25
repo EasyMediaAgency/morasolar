@@ -54,7 +54,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     resendApiKey: "",
     emailFrom: "",
-    emailTo: "",
   },
 
   tailwindcss: {
