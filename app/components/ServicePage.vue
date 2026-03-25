@@ -3,6 +3,7 @@ defineProps<{
   title: string
   image?: string
   imageAlt?: string
+  imageLoading?: "eager" | "lazy"
 }>()
 </script>
 
@@ -11,12 +12,16 @@ defineProps<{
     <section class="py-20 md:py-28 px-4">
       <div class="container mx-auto grid md:grid-cols-[0.7fr_1fr] gap-12 items-center">
         <figure v-if="image" class="md:order-1">
-          <img
+          <NuxtImg
             :src="image"
-            :alt="imageAlt || title"
             width="800"
             height="531"
-            loading="lazy"
+            :alt="imageAlt || title"
+            sizes="(max-width: 767px) 100vw, 40vw"
+            :loading="imageLoading || 'eager'"
+            :fetchpriority="imageLoading === 'lazy' ? 'auto' : 'high'"
+            format="webp"
+            quality="80"
             class="w-full rounded-md"
           />
         </figure>

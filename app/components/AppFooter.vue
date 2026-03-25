@@ -4,7 +4,15 @@
       <!-- Brand -->
       <div>
         <NuxtLink to="/">
-          <img src="/images/morasollogo.png" width="200" alt="Móra Solar 88 logo" />
+          <NuxtImg
+            src="/images/morasollogo.png"
+            width="200"
+            height="65"
+            loading="lazy"
+            format="webp"
+            quality="80"
+            alt="Móra Solar 88 logo"
+          />
         </NuxtLink>
         <p class="mt-5 text-sm">
           &copy; {{ new Date().getFullYear() }} Móra Solar 88 Kft.<br />

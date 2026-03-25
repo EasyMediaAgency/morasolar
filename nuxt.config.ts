@@ -3,6 +3,7 @@ export default defineNuxtConfig({
 
   modules: [
     "@netlify/nuxt",
+    "@nuxt/image",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "@nuxtjs/sitemap",
@@ -22,7 +23,10 @@ export default defineNuxtConfig({
     families: {
       Manrope: [500, 700],
     },
+    subsets: ["latin-ext"],
     display: "swap",
+    preload: true,
+    preconnect: true,
   },
 
   site: {
