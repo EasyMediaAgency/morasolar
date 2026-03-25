@@ -4,7 +4,7 @@ Nuxt 4 website for Móra Solar 88 Kft. The site presents the company's services,
 
 ## Stack
 
-- Nuxt 3
+- Nuxt 4
 - Tailwind CSS
 - TypeScript
 - Resend

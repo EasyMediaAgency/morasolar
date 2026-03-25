@@ -1,10 +1,8 @@
 export default defineNuxtConfig({
-  future: {
-    compatibilityVersion: 4,
-  },
   compatibilityDate: "2025-03-25",
 
   modules: [
+    "@netlify/nuxt",
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "@nuxtjs/sitemap",

@@ -15,10 +15,11 @@
     "@nuxtjs/robots": "^5.2.3",
     "@nuxtjs/sitemap": "^7.2.8",
     "@nuxtjs/tailwindcss": "^6.13.2",
-    "nuxt": "^3.17.0",
+    "nuxt": "^4.0.0",
     "resend": "^6.9.4"
   },
   "devDependencies": {
+    "@netlify/nuxt": "^0.2.36",
     "typescript": "^5.8.3"
   }
 }
