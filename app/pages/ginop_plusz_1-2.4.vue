@@ -9,7 +9,7 @@ useSeoMeta({
   ogImage: "https://morasolar.com/images/og_image.png",
 });
 
-const pdfSource = "/GINOP_PLUSZ-1.2.4-25-2025-02099.pdf";
+const pdfSource = "/pdf/GINOP_PLUSZ-1.2.4-25-2025-02099.pdf";
 </script>
 
 <template>
