@@ -1,35 +1,34 @@
 <script setup lang="ts">
 const form = reactive({
-  nev: '',
-  email: '',
-  telefon: '',
-  uzenet: '',
-})
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+});
 
-const loading = ref(false)
+const loading = ref(false);
 
 async function handleSubmit() {
-  loading.value = true
+  loading.value = true;
   try {
-    // @ts-expect-error smtp.js global
-    await Email.send({
-      Host: 'smtp.elasticemail.com',
-      Username: 'info@morasolar.com',
-      Password: '3B940B582F5E3AF7D013E8F6096DCAAA3759',
-      To: 'info@morasolar.com',
-      From: 'info@morasolar.com',
-      Subject: 'Új email a morasolar.com-ról',
-      Body: `Név: ${form.nev}\nEmail: ${form.email}\nTelefonszám: ${form.telefon}\nÜzenet: ${form.uzenet}`,
-    })
-    alert('Üzenet elküldve!')
-    form.nev = ''
-    form.email = ''
-    form.telefon = ''
-    form.uzenet = ''
+    await $fetch("/api/send-email", {
+      method: "POST",
+      body: {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+      },
+    });
+    alert("Üzenet elküldve!");
+    form.name = "";
+    form.email = "";
+    form.phone = "";
+    form.message = "";
   } catch {
-    alert('Hiba történt az email küldésekor.')
+    alert("Hiba történt az email küldésekor.");
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
 </script>
@@ -39,11 +38,13 @@ async function handleSubmit() {
     <div class="flex justify-center items-center mb-12">
       <div class="w-full max-w-2xl bg-white rounded-lg shadow-xl p-8 md:p-12">
         <form @submit.prevent="handleSubmit">
-          <h2 class="text-2xl font-bold text-center mb-8 relative pb-3 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-1 after:w-12 after:rounded after:bg-orange">
+          <h2
+            class="text-2xl font-bold text-center mb-8 relative pb-3 after:content-[''] after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-1 after:w-12 after:rounded after:bg-orange"
+          >
             Küldj emailt!
           </h2>
           <input
-            v-model="form.nev"
+            v-model="form.name"
             type="text"
             class="contact-field"
             placeholder="Név"
@@ -57,14 +58,14 @@ async function handleSubmit() {
             required
           />
           <input
-            v-model="form.telefon"
+            v-model="form.phone"
             type="tel"
             class="contact-field"
             placeholder="Telefon"
             required
           />
           <textarea
-            v-model="form.uzenet"
+            v-model="form.message"
             class="contact-field min-h-[150px]"
             placeholder="Üzenet"
           />
@@ -74,7 +75,7 @@ async function handleSubmit() {
               :disabled="loading"
               class="btn-primary-orange"
             >
-              {{ loading ? 'Küldés...' : 'Elküld' }}
+              {{ loading ? "Küldés..." : "Elküld" }}
             </button>
           </div>
         </form>

@@ -5,6 +5,5 @@
       <slot />
     </main>
     <AppFooter />
-    <Script src="https://smtpjs.com/v3/smtp.js" />
   </div>
 </template>
