@@ -1,7 +1,7 @@
 import { Resend } from 'resend'
 
 export default defineEventHandler(async (event) => {
-  const { resendApiKey, emailFrom, emailTo } = useRuntimeConfig()
+  const { resendApiKey, emailFrom } = useRuntimeConfig()
 
   const resend = new Resend(resendApiKey)
   const body = await readBody(event)
@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
 
   const { error } = await resend.emails.send({
     from: emailFrom,
-    to: emailTo,
+    to: 'morasolar88@gmail.com',
     subject: 'Új email a morasolar.com-ról',
     html: `
       <h2>Új üzenet a weboldalról</h2>

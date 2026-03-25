@@ -78,9 +78,12 @@ const stats = [
       />
       <div
         class="absolute inset-0 bg-cover bg-center bg-fixed"
-        style="background-image: url('/images/napelem_fal.jpg')"
+        style="background-image: url(&quot;/images/napelem_fal.jpg&quot;)"
       />
       <div class="absolute inset-0 bg-black/35" />
+
+      <SzechenyiTervPlusz />
+
       <div class="relative z-10 max-w-3xl mx-auto">
         <h1
           class="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg leading-tight"
