@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const mobileMenuOpen = ref(false);
-const dropdownOpen = ref(false);
+const openDropdown = ref<"services" | "grants" | null>(null);
 
 function toggleMenu() {
   mobileMenuOpen.value = !mobileMenuOpen.value;
@@ -22,6 +22,11 @@ const services = [
   { label: "Villanyszerelés", to: "/villanyszereles" },
   { label: "Villamos felülvizsgálat", to: "/villamosfelulvizsgalat" },
   { label: "Földmunka", to: "/foldmunka" },
+];
+
+const grants = [
+  { label: "Pályázati ügyintézés", to: "/palyazat" },
+  { label: "Akuális pályázatok", to: "/palyazatok" },
 ];
 </script>
 
@@ -59,14 +64,14 @@ const services = [
         </NuxtLink>
         <div
           class="relative"
-          @mouseenter="dropdownOpen = true"
-          @mouseleave="dropdownOpen = false"
+          @mouseenter="openDropdown = 'services'"
+          @mouseleave="openDropdown = null"
         >
           <button class="font-bold text-charcoal hover:text-orange transition">
             Szolgáltatások
           </button>
           <div
-            v-show="dropdownOpen"
+            v-show="openDropdown === 'services'"
             class="absolute top-full left-0 bg-white shadow-lg min-w-[200px] rounded z-10"
           >
             <NuxtLink
@@ -79,12 +84,28 @@ const services = [
             </NuxtLink>
           </div>
         </div>
-        <NuxtLink
-          to="/palyazat"
-          class="font-bold text-charcoal hover:text-orange transition"
+        <div
+          class="relative"
+          @mouseenter="openDropdown = 'grants'"
+          @mouseleave="openDropdown = null"
         >
-          Pályázat
-        </NuxtLink>
+          <button class="font-bold text-charcoal hover:text-orange transition">
+            Pályázat
+          </button>
+          <div
+            v-show="openDropdown === 'grants'"
+            class="absolute top-full left-0 bg-white shadow-lg min-w-[200px] rounded z-10"
+          >
+            <NuxtLink
+              v-for="g in grants"
+              :key="g.to"
+              :to="g.to"
+              class="block px-4 py-3 text-charcoal hover:bg-gray-100 hover:text-orange transition"
+            >
+              {{ g.label }}
+            </NuxtLink>
+          </div>
+        </div>
         <NuxtLink
           to="/#email"
           class="font-bold text-charcoal hover:text-orange transition"
@@ -163,9 +184,20 @@ const services = [
                 </NuxtLink>
               </div>
             </div>
-            <NuxtLink to="/palyazat" class="font-bold py-1.5" @click="closeMenu"
-              >Pályázat</NuxtLink
-            >
+            <div>
+              <p class="font-bold py-1.5">Pályázatok</p>
+              <div class="pl-4 flex flex-col gap-1">
+                <NuxtLink
+                  v-for="g in grants"
+                  :key="g.to"
+                  :to="g.to"
+                  class="py-1 hover:text-orange transition"
+                  @click="closeMenu"
+                >
+                  {{ g.label }}
+                </NuxtLink>
+              </div>
+            </div>
             <NuxtLink to="/#email" class="font-bold py-1.5" @click="closeMenu"
               >Kapcsolat</NuxtLink
             >
