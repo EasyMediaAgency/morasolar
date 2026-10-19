@@ -23,6 +23,16 @@ useSeoMeta({
         />
       </div>
 
+      <!-- Uniós támogatás elismerése -->
+      <div
+        class="bg-lavender-web border-l-4 border-[#003399] rounded-lg p-5 md:p-6 mb-12 text-center"
+      >
+        <p class="text-lg md:text-xl font-bold text-[#003399] leading-snug">
+          A projekt az Európai Unió támogatásával, a magyar állam
+          társfinanszírozásával valósult meg.
+        </p>
+      </div>
+
       <!-- Dátum + Cím -->
       <div class="grid md:grid-cols-[auto_1fr] gap-6 md:gap-12 mb-10">
         <div>
@@ -39,7 +49,7 @@ useSeoMeta({
         <div>
           <p class="text-black-coral leading-relaxed">
             <strong>Kedvezményezett neve:</strong> Móra Solar 88 Korlátolt Felelősségű Társaság<br />
-            <strong>Projekt címe:</strong> „A Móra Solar 88 Kft. technológiai korszerűsítése"<br />
+            <strong>Projekt címe:</strong> „A Móra Solar 88 Kft. technológiai korszerűsítése”<br />
             <strong>A szerződött támogatás összege:</strong> 45,6 millió Ft<br />
             <strong>Támogatás mértéke:</strong> vissza nem térítendő
           </p>
@@ -57,7 +67,12 @@ useSeoMeta({
             és Innovációs Operatív Program Plusz keretében meghirdetett
             GINOP_PLUSZ-1.2.4-25 „Mikro- és kisvállalkozások támogatása a
             leghátrányosabb helyzetű régiókban, illetve a Szabad Vállalkozási
-            Zónákban" című felhívás keretében támogatásban részesült.
+            Zónákban” című felhívás keretében támogatásban részesült. A
+            Mórahalom székhellyel rendelkező vállalkozás az európai uniós
+            támogatásnak köszönhetően 45,6 millió Ft vissza nem térítendő
+            európai uniós támogatást fordíthat a beruházás elszámolására.
+            Projekt címe: „A Móra Solar 88 Kft. technológiai korszerűsítése”.
+            Projekt azonosítószáma: GINOP_PLUSZ-1.2.4-25-2025-02099
           </p>
           <p>
             A projekt keretében a vállalkozás Mórahalom, Akácos úti saját, 1225
@@ -81,13 +96,18 @@ useSeoMeta({
               lebonyolítását (saját géppark, digitalizált folyamatok).
             </li>
           </ul>
+          <h4 class="font-bold text-charcoal">
+            A csarnok, mint kapacitásbővítő elem
+          </h4>
           <p>
             Az új csarnok – raktár, műhely és adminisztratív egység egyben –
             jelentősen növeli a rendelkezésre álló hasznos alapterületet,
             lehetővé teszi a nagyobb mennyiségű napelem, villanyszerelési anyag
-            és kiegészítő tárolását, valamint a gépek biztonságos elhelyezését.
-            Ez közvetlenül nagyobb projektvolumen és párhuzamosan futó munkák
-            vállalását teszi lehetővé.
+            és kiegészítő tárolását, valamint a gépek (minikotró, kosaras emelő,
+            tisztító rendszer stb.) biztonságos elhelyezését. Ez közvetlenül
+            nagyobb projektvolumen és párhuzamosan futó munkák vállalását teszi
+            lehetővé, tehát megfelel a kapacitásbővítés tartalmi
+            kritériumainak.
           </p>
           <p>
             A projekt eredményeként a Móra Solar 88 Kft. lényegesen nagyobb,
@@ -97,9 +117,9 @@ useSeoMeta({
             uniós és hazai előírásoknak.
           </p>
           <p>
-            A projekt a Széchenyi Terv Plusz program, „GINOP Plusz-1.2.4-25"
+            A projekt a Széchenyi Terv Plusz program, „GINOP Plusz-1.2.4-25”
             „Mikro- és kisvállalkozások támogatása a leghátrányosabb helyzetű
-            régiókban, illetve a Szabad Vállalkozási Zónákban" című felhívás
+            régiókban, illetve a Szabad Vállalkozási Zónákban” című felhívás
             keretében valósul meg.
           </p>
         </div>

@@ -47,6 +47,7 @@
         <nav class="flex flex-col gap-1 text-sm">
           <NuxtLink to="/#rolunk" class="py-1 hover:text-orange transition">Rólunk</NuxtLink>
           <NuxtLink to="/#szolgaltatasok" class="py-1 hover:text-orange transition">Szolgáltatások</NuxtLink>
+          <NuxtLink to="/palyazatok" class="py-1 hover:text-orange transition">Pályázatok</NuxtLink>
           <NuxtLink to="/impresszum" class="py-1 hover:text-orange transition">Impresszum</NuxtLink>
           <NuxtLink to="/adatvedelem" class="py-1 hover:text-orange transition">Adatvédelem</NuxtLink>
         </nav>
