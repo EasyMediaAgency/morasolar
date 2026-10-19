@@ -23,6 +23,16 @@ useSeoMeta({
         />
       </div>
 
+      <!-- Uniós támogatás elismerése -->
+      <div
+        class="bg-lavender-web border-l-4 border-[#003399] rounded-lg p-5 md:p-6 mb-12 text-center"
+      >
+        <p class="text-lg md:text-xl font-bold text-[#003399] leading-snug">
+          A projekt az Európai Unió támogatásával, a magyar állam
+          társfinanszírozásával valósult meg.
+        </p>
+      </div>
+
       <!-- Dátum + Cím -->
       <div class="grid md:grid-cols-[auto_1fr] gap-6 md:gap-12 mb-10">
         <div>
